@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*estilos grales ;)*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('https://cdn.cursors-4u.net/previews/bloody-x-b76263a1-32.webp') 32 32, auto !important;
+}
+p{
+  font-family: "Geo", sans-serif;
+    font-size: 1.45rem;
+}
+h1{
+  font-family: "Quantico", sans-serif;
+    font-size: 4.2rem;
+}
+h3{
+        font-family: 'Barrio';
+        font-size: 2.2rem;
+        display: flex;
+        justify-content:center;
+}
+
+/*body*/
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/bg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/*nav bar*/
+
+/*colores*/
+:root{
+    --background-color: #070707;
+    --text-title-color: #c71313;
+    --text-color: #851717;
+    --icon-color: #bb5c5c;
+    --icon-menu-color: #b87a7a;
+    --menu-icon: #e0caca;
+
+    --text-selected-color: #e0caca;
+    --background-selected-color: #2c2727;
+    --background-hover: #2c2727;
+
+    --border-color: #070707;
+
+    --shadow: #6e0202;
+    --dark-red: #490c0c;
+    --border-box: #c54848;
+}
+
+header{
+    z-index: 200;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    padding: 0.45rem 2rem 0.45rem 1.27rem;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    left: 0;
+}
+/*sección izquierda*/
+.izquierda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+}
+
+/*menu*/
+.menu-container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.menu{
+    width: 1.5rem;
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu div{
+    width: 100%;
+    height: 0.15rem;
+    background-color: var(--menu-icon);
+    transition: all 0.3s ease;
+}
+.menu.menu-toggle div:first-child{
+    width: 40%;
+    transform: rotate(-35deg) translate(-30%, 175%);
+}
+.menu.menu-toggle div:last-child{
+    width: 40%;
+    transform: rotate(35deg) translate(-30%, -160%);
+}
+
+/*logazo*/
+.logazo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'great vibes';
+}
+.logazo .logo{
+    width: 1.9rem;
+}
+.logazo .name{
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--text-title-color);
+}
+
+/*sección derecha*/
+.derecha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+}
+.derecha a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+.derecha a:hover{
+    background-color: var(--background-hover);
+}
+.derecha img{
+    width: 1.5rem;
+    margin: 0.5rem;
+}
+.derecha .user{
+    width: 2.1rem;
+    border-radius: 50%;
+}
+/*sidebar*/
+.sidebar{
+    margin-top: 4rem;
+    width: 0rem;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.1rem 0;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    background-color: var(--background-color);
+    transition: width 0.5s ease;
+    width: 4rem;
+}
+.sidebar.menu-toggle{
+    width: 18.75rem;
+}
+.sidebar a{
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.9rem 0.7rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--text-color);
+    transition: 0.3s ease;
+}
+.sidebar a:hover{
+    background-color: var(--background-hover);
+    color: white;
+}
+.sidebar a.seleccionado{
+    color: var(--text-selected-color);
+    background-color: var(--background-selected-color);
+}
+.sidebar img{
+    width: 1.6rem;
+}
+
+/*navbar responsive*/
+@media (max-width: 1200px){
+    .derecha .icons-header{
+        display: none;
+    }
+    .sidebar{
+        width: 0;
+    }
+    main{
+        margin-left: 0;
+    }
+    main.menu-toggle{
+        margin-left: 0;
+    }
+    .menu.menu-toggle div:first-child{
+        width: 100%;
+        transform: rotate(-45deg) translate(-0.2rem, 0.3rem);
+    }
+    .menu.menu-toggle div:nth-child(2){
+        opacity: 0;
+    }
+    .menu.menu-toggle div:last-child{
+        width: 100%;
+        transform: rotate(45deg) translate(-0.2rem, -0.3rem);
+    }
+}
+
+/*POR FIN TERMINA EL NAVEGADORRRR*/
+
+main{
+    max-width: 1000px;
+    margin: 5rem  auto;
+    width: 100%;
+    padding: 2rem;
+    transition: padding-left 0.5s ease;
+    font-size: 170%;
+    box-sizing: border-box;
+    background-color:rgba(36, 14, 14, 0.7);
+    box-shadow: 6px 6px 3px var(--shadow);
+    border: solid rgb(197, 72, 72);
+}
+
+main img, main video, main iframe{/*deco de windows*/
+    object-fit: cover;
+    box-shadow: 6px 6px 3px var(--shadow);
+    border: 5px inset var(--border-box);
+}
+.box{ 
+    background: var(--dark-red);
+    color: #ffffff;
+    box-shadow: 6px 6px 3px var(--shadow);
+    border: inset var(--border-box);
+}
+.box h1 {
+    background: #8b0909;
+    color: var(--dark-red);
+    padding: 4px 7px;
+    border: 3px inset #aa2a2a;
+}
+.box p {
+    padding: 0.5rem;
+    border: 3px inset #c54848;
+} /*find deco*/
+
+.all{
+    flex: 1;
+}
+
+.column{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 2rem 0%;
+}
+
+
+
+@media (max-width: 900px){ /*centrado cuando sea chicho*/
+    .column{
+        flex-direction: column;
+    }
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
